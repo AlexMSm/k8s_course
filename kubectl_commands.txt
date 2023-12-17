@@ -1,0 +1,12 @@
+kubectl get pods/services/deployments etc
+kubectl get pods --namespace=kube-system -o wide
+kubectl run nginx --image=nginx    start the nginx image in a new pod
+kubectl describe pod nginx
+minikube ssh
+
+kubectl create deployment nginx-deployment --image=nginx
+kubectl describe deployment nginx-deployment
+k describe pod nginx-deployment-6d6565499c-ckdk5
+
+kubectl scale deployment nginx-deployment --replicas=5
+kubectl expose deployment nginx-deployment --port=8080 --target-port=80
