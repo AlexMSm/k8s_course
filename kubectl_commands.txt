@@ -10,3 +10,26 @@ k describe pod nginx-deployment-6d6565499c-ckdk5
 
 kubectl scale deployment nginx-deployment --replicas=5
 kubectl expose deployment nginx-deployment --port=8080 --target-port=80
+
+docker build . -t alexmsm/k8s_course
+docker login -u ams1997 -p <password> docker.io
+docker push alexmsm/k8s_course :latest
+kubectl create deployment k8s-web-hello --image:ams1997/k8s_course
+kubectl expose deployment k8s-web-hello --port=3000
+
+ alias k=kubectl 
+
+k expose deployment k8s-web-hello --type=NodePort --port=3000 
+kubectl delete svc k8s-web-hello 
+
+kubectl expose deployment k8s-web-hello --type=LoadBalancer --port=3000
+kubectl describe deployment k8s-web-hello
+
+docker build . -t ams1997/k8s_course:2.0.0 
+docker push ams1997/k8s_course:2.0.0 
+
+kubectl set image deployment/k8s-web-hello k8s-course-r5ml2=ams1997/k8s_course:2.0.0
+kubectl rollout status deployment k8s-web-hello 
+
+minikube service k8s-web-hello 
+minikube dashboard
