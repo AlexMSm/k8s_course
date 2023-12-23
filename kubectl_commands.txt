@@ -33,3 +33,11 @@ kubectl rollout status deployment k8s-web-hello
 
 minikube service k8s-web-hello 
 minikube dashboard
+
+DEV OPS course
+
+k config set-context --current --namespace=dev
+
+k create deployment hello-node --image=k8s.gcr.io/echoserver:1.4
+
+ get events -n dev
