@@ -13,3 +13,12 @@ Secrets
 
 Namespace
 Where all k8s resources are created - set to 'default' by default.
+
+When changing configmaps, create a new one with incremented v1.1 etc. Don't existing as changes won't be applied to pods.
+
+Resources:
+
+Request - What the container requests as a minimum from the k8s nodes
+Limit - Actual allowed limits to the container
+
+Essentially a min and max.
