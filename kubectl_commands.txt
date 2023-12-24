@@ -41,3 +41,4 @@ k config set-context --current --namespace=dev
 k create deployment hello-node --image=k8s.gcr.io/echoserver:1.4
 
  get events -n dev
+

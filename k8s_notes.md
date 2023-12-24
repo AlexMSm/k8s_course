@@ -22,3 +22,14 @@ Request - What the container requests as a minimum from the k8s nodes
 Limit - Actual allowed limits to the container
 
 Essentially a min and max.
+
+Helm
+
+helm create <chart name>
+helm install <release-name> <helm chart folder>
+
+minikube tunnel
+
+helm upgrade <release-name> <helm chart folder> --values </values.yaml>
+
+helm ls
