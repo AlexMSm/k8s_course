@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: myconfigmapv1.1
-  namespace: default
+  name: {{ .Values.configmap.name }}
+  namespace: {{ .Values.namespace }}
 data:
   BG_COLOR: "#12181b"
   FONT_COLOR: "#FFFFF"
-  CUSTOM_HEADER: "Deployed with second config map."
+  CUSTOM_HEADER: {{ .Values.configmap.data.CUSTOM_HEADER }}

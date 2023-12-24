@@ -33,3 +33,6 @@ minikube tunnel
 helm upgrade <release-name> <helm chart folder> --values </values.yaml>
 
 helm ls
+
+For prod/dev, include the namespace in the install/upgrade commands:
+helm upgrade <release-name> <helm chart folder> --values </values.yaml> -f <values-dev/prod.yaml> -n <dev/prod>

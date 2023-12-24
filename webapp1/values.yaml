@@ -1,1 +1,12 @@
 appName: myhelmapp
+
+namespace: default
+
+configmap:
+  name: helmmapconfigmapv1.1
+  data:
+    CUSTOM_HEADER: 'App deployed via helm charts'
+
+image:
+  name: devopsjourney1/mywebapp
+  tag: latest
